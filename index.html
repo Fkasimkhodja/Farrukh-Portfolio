@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farrukh Kasimkhodja Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Farrukh Kasimkhodja Portfolio</h1>
+    <nav>
+      <a onclick="showAllSections()">Home</a>
+      <a onclick="showSection('about')">About Me</a>
+      <a onclick="showSection('technical')">Technical Interests</a>
+      <a onclick="showSection('portfolio')">Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>
+        Hi! I'm Farrukh Kasimkhodja, a passionate Computer Science (AI) student at the University of Hertfordshire.
+        Welcome to my personal portfolio where I share my skills, projects, and achievements.
+      </p>
+    </section>
+    
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        My name is Farrukh Kasimkhodja. I'm 19 years old and currently in my second year of BSc Computer Science (AI) at the University of Hertfordshire.
+        During the academic year, I reside in Hatfield, UK, and spend my holidays in Tashkent, Uzbekistan.
+      </p>
+      <img src="farrukhphoto.jpg" alt="Farrukh Kasimkhodja Photo" class="photo">
+    </section>
+    
+    <!-- Technical Interests Section -->
+    <section id="technical">
+      <h2>Technical Interests</h2>
+      <p>
+        Through my studies and personal projects, I have gained a range of technical skills:
+      </p>
+      <ul>
+        <li><strong>Programming:</strong> Proficient in Python, Java, SQL, and foundational knowledge in C++.</li>
+        <li><strong>Game Development:</strong> Experience in prototyping and game mechanics design.</li>
+        <li><strong>Algorithms and Data Structures:</strong> Understanding of optimization techniques.</li>
+        <li><strong>Database Systems:</strong> Hands-on experience with SQL and relational models.</li>
+        <li><strong>Software Development:</strong> Familiarity with Agile methodologies, testing, and version control.</li>
+      </ul>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Body Measurement App</h3>
+          <p>
+            A hackathon project aimed at solving the problem of inaccurate body measurements for online shopping. 
+            This app uses AI-powered image processing to generate precise measurements.
+          </p>
+          <button onclick="showSection('body-measurement')">View Details</button>
+        </div>
+        <div class="project">
+          <h3>CamGenX</h3>
+          <p>
+            A creative AI tool designed for digital content creators, generating context-specific custom images 
+            tailored to user needs.
+          </p>
+          <button onclick="showSection('camgenx')">View Details</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Project Details: Body Measurement -->
+    <section id="body-measurement" style="display: none;">
+      <h2>Body Measurement App</h2>
+      <h3>Inspiration</h3>
+      <p>
+        Inspired by the challenges of online shopping and finding the right fit, we developed an app
+        to calculate accurate body measurements using just a smartphone.
+      </p>
+      <h3>What It Does</h3>
+      <p>
+        The app processes images taken by your smartphone camera to generate precise body measurements.
+        It eliminates the need for manual measurements and expensive equipment, revolutionizing online shopping.
+      </p>
+      <h3>How We Built It</h3>
+      <p>
+        We utilized Python for backend image processing, JavaScript for the front-end interface, and machine learning
+        algorithms for accurate measurement calculations. The development involved data collection, model training, and
+        implementing a responsive UI.
+      </p>
+      <h3>Accomplishments</h3>
+      <ul>
+        <li>Developed accurate image processing algorithms for body measurements.</li>
+        <li>Created a user-friendly, responsive interface.</li>
+        <li>Won 3rd place in a competitive hackathon.</li>
+      </ul>
+      <h3>What We Learned</h3>
+      <p>
+        We gained valuable insights into AI implementation, image processing, and teamwork. This project enhanced
+        our understanding of real-world problem-solving with technology.
+      </p>
+      <button onclick="showAllSections()">Back to Portfolio</button>
+    </section>
+    
+    <!-- Project Details: CamGenX -->
+    <section id="camgenx" style="display: none;">
+      <h2>CamGenX</h2>
+      <h3>Inspiration</h3>
+      <p>
+        CamGenX was inspired by the growing demand for custom content creation in the digital space. The goal was to
+        provide an accessible, AI-powered tool for generating unique, context-aware images.
+      </p>
+      <h3>What It Does</h3>
+      <p>
+        CamGenX is an AI-powered image generator that creates personalized, context-specific images based on user input.
+        It's designed for digital creators looking to enhance their content effortlessly.
+      </p>
+      <h3>How We Built It</h3>
+      <p>
+        We integrated pre-trained AI models with Python for backend processing and JavaScript for the user interface. 
+        The development process involved implementing a seamless workflow from user input to image output.
+      </p>
+      <h3>Accomplishments</h3>
+      <ul>
+        <li>Developed a fully functional AI-powered image generator within a short timeframe.</li>
+        <li>Designed an intuitive and engaging user interface.</li>
+        <li>Won 10th place in a competitive hackathon.</li>
+      </ul>
+      <h3>What We Learned</h3>
+      <p>
+        This project deepened our understanding of AI-powered tools, front-end and back-end integration, and collaborative
+        development in a hackathon setting.
+      </p>
+      <button onclick="showAllSections()">Back to Portfolio</button>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Farrukh Kasimkhodja. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("main > section");
+      sections.forEach(section => {
+        section.style.display = section.id === sectionId ? "block" : "none";
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showAllSections() {
+      const sections = document.querySelectorAll("main > section");
+      sections.forEach(section => {
+        if (section.id === "body-measurement" || section.id === "camgenx") {
+          section.style.display = "none";
+        } else {
+          section.style.display = "block";
+        }
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
